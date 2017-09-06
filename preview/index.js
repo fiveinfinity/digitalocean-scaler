@@ -7,6 +7,11 @@ import webpackConfig from '../webpack.config';
 
 const app = express();
 
+const Docker = require('dockerode');
+const docker = new Docker({ socketPath: '/var/run/docker.sock' });
+
+app.set('docker', docker);
+
 app.use(
     '/static/',
     webpackDevMiddleware(
