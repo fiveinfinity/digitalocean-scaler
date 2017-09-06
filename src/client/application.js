@@ -1,8 +1,16 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
+import { Grid, Button, Row, Col } from 'react-bootstrap';
 
 const Application = () => {
-	return <Button>BOOM!</Button>;
+	const onClick = () => console.log('BOOM');
+
+	return <Grid>
+		<Row>
+			<Col lg={12}>
+				<Button onClick={onClick}>BOOM!</Button>
+			</Col>
+		</Row>
+	</Grid>;
 };
 
 export { Application };

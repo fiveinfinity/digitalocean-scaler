@@ -7,6 +7,7 @@ const Template = ({ __html }) => {
         </head>
         <body>
             <div id="root" dangerouslySetInnerHTML={{ __html }}/>
+            <script src="/static/bundle.js" type="text/javascript"/>
         </body>
     </html>;
 }
