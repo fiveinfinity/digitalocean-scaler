@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { Grid, Button, Row, Col, Jumbotron, Modal } from 'react-bootstrap';
+import { Route } from 'react-router';
+import { Link, Switch } from 'react-router-dom';
+
+import { Login } from './';
 
 class Boom extends Component {
 	constructor (props) {
@@ -73,6 +77,16 @@ const Application = () => {
 						</Col>
 					</Row>
 				</Jumbotron>
+			</Col>
+		</Row>
+		<Row>
+			<Col lg={12}>
+				<Switch>
+					<Route strict exact path="/">
+						<Link to="/login">Login</Link>
+					</Route>
+					<Route path="/login" component={Login}/>
+				</Switch>
 			</Col>
 		</Row>
 	</Grid>;
