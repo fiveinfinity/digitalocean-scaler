@@ -1,8 +1,10 @@
 import React from 'react';
-import { Application } from './index.js';
+import { BrowserRouter } from 'react-router-dom';
 import { render } from 'react-dom';
 
+import { routes } from './';
+
 render(
-    <Application/>,
-    document.getElementById('root')
+	<BrowserRouter>{routes}</BrowserRouter>,
+	document.getElementById('root')
 );

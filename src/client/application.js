@@ -43,12 +43,12 @@ class Zen extends Component {
 
 	componentDidMount () {
 		fetch('http://api.github.com/zen')
-		.then(res => res.text())
-		.then(message => {
-			this.setState({
-				message
+			.then(res => res.text())
+			.then(message => {
+				this.setState({
+					message
+				});
 			});
-		});
 	}
 
 	render () {
@@ -69,7 +69,7 @@ const Application = () => {
 							<Boom/>
 						</Col>
 						<Col lg={8}>
-							<iframe id="ls_embed_1504672951" src="https://livestream.com/accounts/1538473/events/1578216/player?width=560&height=315&autoPlay=true&mute=false" width="560" height="315" frameborder="0" scrolling="no" allowfullscreen></iframe>
+							<iframe id="ls_embed_1504672951" src="https://livestream.com/accounts/1538473/events/1578216/player?width=560&height=315&autoPlay=true&mute=false" width="560" height="315" frameBorder="0" scrolling="no" allowFullScreen></iframe>
 						</Col>
 					</Row>
 				</Jumbotron>

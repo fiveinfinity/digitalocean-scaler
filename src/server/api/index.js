@@ -1,7 +1,5 @@
-import { containers } from './containers';
+import { docker } from './docker';
 
-const api = app => {
-    containers(app);
+export const api = app => {
+	docker(app);
 };
-
-export { api };
