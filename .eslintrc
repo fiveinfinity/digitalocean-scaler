@@ -13,7 +13,8 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "json"
     ],
     "rules": {
         "indent": [
@@ -31,6 +32,17 @@
         "semi": [
             "error",
             "always"
+        ],
+        "max-len": [
+            "error",
+            80
+        ],
+        "max-lines": [
+            "error"
+        ],
+        "react/self-closing-comp": [
+            "error",
+            { "component": true, "html": true }
         ]
     }
 }
