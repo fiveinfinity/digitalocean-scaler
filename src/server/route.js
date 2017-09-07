@@ -4,6 +4,7 @@ import { StaticRouter } from 'react-router';
 import passport from 'passport';
 import { Strategy } from 'passport-digitalocean';
 import config from 'config';
+import fetch from 'node-fetch';
 
 import { Template } from './template';
 import { Application } from '../client';
@@ -38,9 +39,36 @@ const setupRoutes = (app) => {
 			res.redirect('/');
 		}
 	);
+	app.get('/create-container', (req, res) => {
+		const { accessToken } = JSON.parse(req.session.passport.user);
+		const headers = {
+			'Authorization': `Bearer ${accessToken}`
+		};
+		fetch('https://api.digitalocean.com/v2/droplets', {
+			method: 'GET',
+			headers,
+			body: {
+				'name': 'example.com',
+				'region': 'nyc3',
+				'size': '512mb',
+				'image': 'ubuntu-14-04-x64',
+				'ssh_keys': null,
+				'backups': false,
+				'ipv6': true,
+				'user_data': null,
+				'private_networking': null,
+				'volumes': null,
+				'tags': [
+					'web'
+				]
+			}
+		}).then(resp => {
+			res.redirect(req.header('Referer'));
+			return resp.json();
+		}).then(console.log).catch(console.log);
+	});
 	app.get('*',
 		(req, res) => {
-			console.log(req.session);
 			const __html = renderToString(
 				<StaticRouter context={{}} location={req.url}>
 					<Application/>

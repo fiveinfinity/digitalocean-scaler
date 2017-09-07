@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Grid, Button, Row, Col, Jumbotron, Modal } from 'react-bootstrap';
 import { Route } from 'react-router';
-import { Switch } from 'react-router-dom';
+import { Link, Switch } from 'react-router-dom';
 
-import { Login } from './';
+import { Panel } from './';
 
 class Boom extends Component {
 	constructor (props) {
@@ -67,12 +67,10 @@ const Application = () => {
 	const digitalOceanLoginUrl = 'https://cloud.digitalocean.com/v1/oauth/authorize?client_id=d9e58bd7aee40a8defbcfe169f549d4f7fa642d41909ef6859c851541d0410fc&redirect_uri=http://127.0.0.1:3000/auth/digitalocean/callback&response_type=code'; //eslint-disable-line
 
 	const eagleCam = <iframe
-		id="ls_embed_1504672951"
-		src="https://livestream.com/accounts/1538473/events/1578216/player?width=560&height=315&autoPlay=true&mute=false" //eslint-disable-line
 		width="560"
 		height="315"
+		src="https://www.youtube-nocookie.com/embed/J9-cqXA1ZiY"
 		frameBorder="0"
-		scrolling="no"
 		allowFullScreen
 	/>;
 
@@ -88,6 +86,7 @@ const Application = () => {
 							<a href={digitalOceanLoginUrl}>
 								<Button>Login</Button>
 							</a>
+							<Link to="/panel">Panel</Link>
 						</Col>
 						<Col lg={8} >
 							{eagleCam}
@@ -99,7 +98,7 @@ const Application = () => {
 		<Row>
 			<Col lg={12}>
 				<Switch>
-					<Route path="/login" component={Login}/>
+					<Route path="/panel" component={Panel}/>
 				</Switch>
 			</Col>
 		</Row>
