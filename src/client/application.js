@@ -71,6 +71,7 @@ const Application = () => {
 							<h1>Scaler</h1>
 							<Zen/>
 							<Boom/>
+							<Link to="/login"><Button>Login</Button></Link>
 						</Col>
 						<Col lg={8}>
 							<iframe id="ls_embed_1504672951" src="https://livestream.com/accounts/1538473/events/1578216/player?width=560&height=315&autoPlay=true&mute=false" width="560" height="315" frameBorder="0" scrolling="no" allowFullScreen></iframe>
@@ -82,9 +83,6 @@ const Application = () => {
 		<Row>
 			<Col lg={12}>
 				<Switch>
-					<Route strict exact path="/">
-						<Link to="/login">Login</Link>
-					</Route>
 					<Route path="/login" component={Login}/>
 				</Switch>
 			</Col>

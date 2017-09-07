@@ -2,9 +2,9 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { render } from 'react-dom';
 
-import { routes } from './';
+import { Application } from './';
 
 render(
-	<BrowserRouter>{routes}</BrowserRouter>,
+	<BrowserRouter><Application/></BrowserRouter>,
 	document.getElementById('root')
 );

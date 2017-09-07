@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "NODE_ENV=development nodemon --exec babel-node preview/index.js"
+    "start": "NODE_ENV=development nodemon --exec babel-node src/server/index.js"
   },
   "repository": {
     "type": "git",
@@ -20,14 +20,17 @@
     "babel-preset-react": "6.24.1",
     "eslint": "4.6.1",
     "eslint-plugin-react": "7.3.0",
+    "passport-local": "1.0.0",
     "react": "15.6.1",
     "react-dom": "15.6.1",
     "webpack": "3.5.5",
     "webpack-dev-middleware": "1.12.0"
   },
   "dependencies": {
+    "body-parser": "1.17.2",
     "dockerode": "2.5.0",
     "express": "4.15.4",
+    "express-session": "1.15.5",
     "passport": "0.4.0",
     "passport-google-oauth": "1.0.0",
     "react-bootstrap": "0.31.2",
